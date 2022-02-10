@@ -25,3 +25,9 @@ struct GameView: View {
         .foregroundColor(.white)
     }
 }
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        GameView()
+    }
+}
