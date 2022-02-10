@@ -18,9 +18,10 @@ struct GameView: View {
                 Text(viewModel.questionProgressText)
                     .font(.callout)
                     .multilineTextAlignment(.leading)
-                    .padding()
+                    .padding(.leading, 2.0)
                 QuestionView(question: viewModel.currentQuestion)
             }
+            .padding(.horizontal, 2.0)
         }
         .foregroundColor(.white)
     }
