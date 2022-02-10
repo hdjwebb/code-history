@@ -15,7 +15,7 @@ struct WelcomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                GameColour.mainColor.ignoresSafeArea()
+                GameColour.main.ignoresSafeArea()
                 VStack {
                     Spacer()
                     VStack(alignment: .leading, spacing: 0) {
