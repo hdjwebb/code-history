@@ -10,7 +10,6 @@ import SwiftUI
 struct QuestionView: View {
     
     @EnvironmentObject var viewModel: GameViewModel //new 
-    
     let question: Question
     
     var body: some View {
@@ -27,7 +26,9 @@ struct QuestionView: View {
                         viewModel.makeGuess(atIndex: answerIndex)
                     }) {
                         ChoiceTextView(choiceText: question.possibleAnswers[answerIndex])
+                            .background(viewModel.color(forOptionIndex: answerIndex))
                     }
+                    .disabled(viewModel.guessWasMade) // disable buttons after guess
                 }
             }
             if viewModel.guessWasMade {

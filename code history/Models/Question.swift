@@ -13,7 +13,7 @@ struct Question: Hashable { // Add Hashable Conformance
     let correctAnswerIndex: Int
     
     static var allQuestions = [
-        Question(questionText: "Who invented the World Wide Web?",
+        Question(questionText: "Who invented the \nWorld Wide Web?",
                          possibleAnswers: [
                             "Steve Jobs",
                             "Linus Torvalds",
@@ -21,7 +21,7 @@ struct Question: Hashable { // Add Hashable Conformance
                             "Tim Berners-Lee"
                          ],
                          correctAnswerIndex: 3),
-        Question(questionText: "What was the first object oriented programming language?",
+        Question(questionText: "What was the first object oriented programming \nlanguage?",
                          possibleAnswers: [
                             "Simula",
                             "Python",
@@ -37,7 +37,7 @@ struct Question: Hashable { // Add Hashable Conformance
                             "Mauna Kea"
                          ],
                          correctAnswerIndex: 2),
-        Question(questionText: "Which year did the iMac get released?",
+        Question(questionText: "Which year did the \niMac get released?",
                          possibleAnswers: [
                             "1997",
                             "1998",
