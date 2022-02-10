@@ -19,7 +19,7 @@ struct QuestionView: View {
                 .bold()
                 .multilineTextAlignment(.leading)
             Spacer()
-            HStack {
+            VStack {
                 ForEach(0..<question.possibleAnswers.count) { answerIndex in
                     Button(action: {
                         print("tapped on option with the text: \(question.possibleAnswers[answerIndex])")
@@ -31,6 +31,7 @@ struct QuestionView: View {
                     .disabled(viewModel.guessWasMade) // disable buttons after guess
                 }
             }
+            Spacer()
             if viewModel.guessWasMade {
                 Button(action: { viewModel.displayNextScreen() }) {
                     BottomTextView(str: "Next")

@@ -44,6 +44,22 @@ struct Question: Hashable { // Add Hashable Conformance
                             "1999",
                             "2000"
                          ],
-                         correctAnswerIndex: 1)
+                         correctAnswerIndex: 1),
+        Question(questionText: "How many circles are in the Olympic rings?",
+                         possibleAnswers: [
+                            "3",
+                            "5",
+                            "7",
+                            "4"
+                         ],
+                         correctAnswerIndex: 1),
+        Question(questionText: "What is cucumber in Spanish?",
+                         possibleAnswers: [
+                            "Cerco",
+                            "Piponmio",
+                            "Losaugo",
+                            "Pepino"
+                         ],
+                         correctAnswerIndex: 3)
     ]
 }
