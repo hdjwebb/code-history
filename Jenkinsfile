@@ -1,6 +1,6 @@
 #!groovy
 
-node('Built-In Node') {
+node {
 
     stage('Checkout/Build/Test') {
 
