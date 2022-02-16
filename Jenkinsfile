@@ -185,7 +185,7 @@ node {
 
     //     throw e
     // }
-}
+// }
 
 def createDurationString(startTime, endTime) {
     def duration = endTime - startTime
