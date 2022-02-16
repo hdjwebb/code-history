@@ -18,7 +18,7 @@ node {
 
         // Build and Test
         // sh 'xcodebuild -scheme "code history" -configuration "Debug" build test -destination "platform=iOS Simulator,name=iPhone 12,OS=15.2" -enableCodeCoverage YES | /usr/local/bin/xcpretty -r junit'
-        sh 'xcrun xcodebuild -scheme "code history" -destination "name=iPhone 12" clean build | /usr/local/bin/xcpretty -r junit -o test-reports/reports.xml'
+        sh 'xcrun xcodebuild test -scheme "code history" -destination "name=iPhone 12" clean build | /usr/local/bin/xcpretty -r junit -o test-reports/reports.xml'
 
         // Publish test restults.
         step([$class: 'JUnitResultArchiver', allowEmptyResults: true, testResults: 'build/reports/junit.xml'])
