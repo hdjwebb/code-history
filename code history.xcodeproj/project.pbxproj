@@ -21,6 +21,7 @@
 		BAF24B3027A8777E00BBF70B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF24B2F27A8777E00BBF70B /* Question.swift */; };
 		BAF24B3227A879AB00BBF70B /* ChoiceTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF24B3127A879AB00BBF70B /* ChoiceTextView.swift */; };
 		BAF24B3427A88B7600BBF70B /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF24B3327A88B7600BBF70B /* Game.swift */; };
+		BAFA4D3D27BD24D80038BB91 /* Jenkinsfile in Resources */ = {isa = PBXBuildFile; fileRef = BAFA4D3C27BD24D80038BB91 /* Jenkinsfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		BAF24B2F27A8777E00BBF70B /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		BAF24B3127A879AB00BBF70B /* ChoiceTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTextView.swift; sourceTree = "<group>"; };
 		BAF24B3327A88B7600BBF70B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		BAFA4D3C27BD24D80038BB91 /* Jenkinsfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Jenkinsfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		BA7C5D8927A48BD400BE2B9F = {
 			isa = PBXGroup;
 			children = (
+				BAFA4D3C27BD24D80038BB91 /* Jenkinsfile */,
 				BA7C5D9427A48BD400BE2B9F /* code history */,
 				BA7C5D9327A48BD400BE2B9F /* Products */,
 			);
@@ -181,6 +184,7 @@
 			files = (
 				BA7C5D9D27A48BD900BE2B9F /* Preview Assets.xcassets in Resources */,
 				BA7C5D9A27A48BD900BE2B9F /* Assets.xcassets in Resources */,
+				BAFA4D3D27BD24D80038BB91 /* Jenkinsfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
