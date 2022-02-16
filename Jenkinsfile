@@ -50,7 +50,7 @@ node {
     def buildURL = "https://localhost:8080/builds/ios"
     def branchNameForURL = env.BRANCH_NAME.replaceAll("/", "-")
 
-    try {
+    {
         stage('Check project') {
             // if (sendStartNotification()) {
             //     slackSend channel: slackChannel, color: colorForBuildResult(currentBuild.getPreviousBuild()), message: slackMessagePrefix() + " Started (<${env.BUILD_URL}|Open>)"
@@ -186,21 +186,3 @@ node {
     //     throw e
     // }
 // }
-
-def createDurationString(startTime, endTime) {
-    def duration = endTime - startTime
-    def minutes = (int)(duration / 60000)
-    def seconds = (int)(duration / 1000) % 60
-
-    /${minutes} min ${seconds} sec/
-}
-
-def colorForBuildResult(build) {
-    if (build == null || build.result == 'SUCCESS') {
-        'good'
-    } else if (build.result == 'UNSTABLE') {
-        'warning'
-    } else {
-        'danger'
-    }
-}
