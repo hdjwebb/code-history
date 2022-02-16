@@ -174,17 +174,17 @@ node {
                 slackSend channel: slackChannel, color: color, message: message
             }
         }
-    } catch (e) {
-        def endTime = System.currentTimeMillis()
-        def durationString = createDurationString(startTime, endTime)
-        def testResultString = getTestResultString()
+    } //catch (e) {
+    //     def endTime = System.currentTimeMillis()
+    //     def durationString = createDurationString(startTime, endTime)
+    //     def testResultString = getTestResultString()
 
-        // if (sendFailNotification()) {
-        //     slackSend channel: slackChannel, color: 'danger', message: slackMessagePrefix() + " Failed after ${durationString} (<${env.BUILD_URL}|Open>)\n\t${testResultString}"
-        // }
+    //     // if (sendFailNotification()) {
+    //     //     slackSend channel: slackChannel, color: 'danger', message: slackMessagePrefix() + " Failed after ${durationString} (<${env.BUILD_URL}|Open>)\n\t${testResultString}"
+    //     // }
 
-        throw e
-    }
+    //     throw e
+    // }
 }
 
 def createDurationString(startTime, endTime) {
