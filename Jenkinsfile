@@ -1,54 +1,50 @@
 #!groovy
 
-// This Jenkinsfile is used to build, test, and generate code coverage for an iOS project
-// If you want to use this Jenkinsfile with your own project you'll need to make some changes:
-// 1. Change the following variables to match your project
-def xcodeproj = 'code history.xcodeproj' // Path to the xcodeproj
-def xcarchive_name = "code history.xcarchive" // Name of the archive to build
-def build_scheme = 'code history' // Scheme to build the app
-def test_scheme = 'code history' // Scheme to build tests
-def simulator_device = 'iPhone 12' // Name of the device type to use for tests
-// 2. If you want to upload builds to a server, update the buildURL variable and uncomment the scp command under stage('Save')
+node('Built-In Node') {
 
-// Configure Jenkins to keep the last 200 build results and the last 50 build artifacts for this job
-properties([buildDiscarder(logRotator(artifactNumToKeepStr: '50', numToKeepStr: '200'))])
+    stage('Checkout/Build/Test') {
 
-node {
-    def startTime = System.currentTimeMillis()
-    // def buildURL = "https://localhost:8080/builds/ios"
-    // def branchNameForURL = env.BRANCH_NAME.replaceAll("/", "-")
+        // Checkout files.
+        checkout([
+            $class: 'GitSCM',
+            branches: [[name: 'master']],
+            doGenerateSubmoduleConfigurations: false,
+            extensions: [], submoduleCfg: [],
+            userRemoteConfigs: [[
+                name: 'github',
+                url: 'https://github.com/hdjwebb/code-history'
+            ]]
+        ])
 
-    {
-        stage('Check project') {
-            // if (sendStartNotification()) {
-            //     slackSend channel: slackChannel, color: colorForBuildResult(currentBuild.getPreviousBuild()), message: slackMessagePrefix() + " Started (<${env.BUILD_URL}|Open>)"
-            // }
+        // Build and Test
+        sh 'xcodebuild -scheme "TimeTable" -configuration "Debug" build test -destination "platform=iOS Simulator,name=iPhone 12,OS=15.2" -enableCodeCoverage YES | /usr/local/bin/xcpretty -r junit'
 
-            checkout scm
-            
-            // Delete and recreate build directory
-            dir('build') {
-                deleteDir()
-            }
-
-            sh "mkdir -p build"
-        }
-
-        stage('Build') {
-            wrap([$class: 'AnsiColorBuildWrapper', 'colorMapName': 'XTerm']) {
-                // Just build for the example project
-                // We can't archive because there's no code signing set up
-                // Set up a development team and code signing to archive an ipa
-                sh "xcrun xcodebuild -scheme '${build_scheme}' -destination 'name=iPhone 7' clean build | tee build/xcodebuild.log | xcpretty"
-
-                // Uncomment this when building a project with code signing set up
-                /*sh "xcrun xcodebuild -scheme '${build_scheme}' archive -archivePath 'build/${xcarchive_name}' | tee build/xcodebuild.log | xcpretty"
-                sh "xcrun xcodebuild -exportArchive -exportOptionsPlist exportOptions.plist -archivePath 'build/${xcarchive_name}' -exportPath build"
-                dir('build') {
-                    sh "zip -qr 'Jenkins-iOS-Example-${env.BUILD_NUMBER}.zip' '${xcarchive_name}'"
-                    sh "mv 'Jenkins iOS Example.ipa' 'Jenkins iOS Example-${branchNameForURL}.ipa'"
-                }*/
-            }
-        } 
+        // Publish test restults.
+        step([$class: 'JUnitResultArchiver', allowEmptyResults: true, testResults: 'build/reports/junit.xml'])
     }
+
+    // stage('Analytics') {
+
+    //     parallel Coverage: {
+    //         // Generate Code Coverage report
+    //         sh '/usr/local/bin/slather coverage --jenkins --html --scheme TimeTable TimeTable.xcodeproj/'
+
+    //         // Publish coverage results
+    //         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'html', reportFiles: 'index.html', reportName: 'Coverage Report'])
+
+
+    //     }, Checkstyle: {
+
+    //         // Generate Checkstyle report
+    //         sh '/usr/local/bin/swiftlint lint --reporter checkstyle > checkstyle.xml || true'
+
+    //         // Publish checkstyle result
+    //         step([$class: 'CheckStylePublisher', canComputeNew: false, defaultEncoding: '', healthy: '', pattern: 'checkstyle.xml', unHealthy: ''])
+    //     }, failFast: true|false   
+    // }
+
+    // stage ('Notify') {
+    //     // Send slack notification
+    //     slackSend channel: '#my-team', message: 'Time Table - Successfully', teamDomain: 'my-team', token: 'my-token'
+    // }
 }
