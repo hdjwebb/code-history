@@ -41,6 +41,7 @@
 		BAF24B3127A879AB00BBF70B /* ChoiceTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTextView.swift; sourceTree = "<group>"; };
 		BAF24B3327A88B7600BBF70B /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		BAFA4D3C27BD24D80038BB91 /* Jenkinsfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Jenkinsfile; sourceTree = "<group>"; };
+		BAFA4D3E27BD765C0038BB91 /* code-history-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "code-history-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +84,7 @@
 		BA7C5D9427A48BD400BE2B9F /* code history */ = {
 			isa = PBXGroup;
 			children = (
+				BAFA4D3E27BD765C0038BB91 /* code-history-Info.plist */,
 				BA7C5D9527A48BD400BE2B9F /* codeHistoryApp.swift */,
 				BAF24B3527A88BB100BBF70B /* Models */,
 				BAF24B3627A88BC300BBF70B /* Views */,
@@ -341,6 +343,7 @@
 				DEVELOPMENT_TEAM = 68S9Y4MTR5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "code-history-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -372,6 +375,7 @@
 				DEVELOPMENT_TEAM = 68S9Y4MTR5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "code-history-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
