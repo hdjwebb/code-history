@@ -60,6 +60,14 @@ struct Question: Hashable { // Add Hashable Conformance
                             "Losaugo",
                             "Pepino"
                          ],
-                         correctAnswerIndex: 3)
+                         correctAnswerIndex: 3),
+        Question(questionText: "What is (4 + 5) / 3 * 5 - 1 ?",
+                         possibleAnswers: [
+                            "14",
+                            "0.4",
+                            "12",
+                            "0.6428571429"
+                         ],
+                         correctAnswerIndex: 0)
     ]
 }
