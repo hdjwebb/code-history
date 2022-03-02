@@ -17,9 +17,9 @@ node {
         ])
 
         // Build and Test
-        // sh 'xcrun xcodebuild -scheme "code history"  build  -destination "platform=iOS Simulator,name=iPhone 12,OS=15.2" | /usr/local/bin/xcpretty -r junit'
+        sh 'xcrun xcodebuild -scheme "code history"  build  test -destination "platform=iOS Simulator,name=iPhone 12,OS=15.2" | /usr/local/bin/xcpretty -r junit'
         // sh 'xcodebuild -scheme "code history" -destination "name=iPhone 12" clean build | /usr/local/bin/xcpretty -r junit -o test-reports/reports.xml'
-        sh 'xcodebuild -alltargets -configuration Release build -allowProvisioningUpdates'
+        // sh 'xcodebuild -alltargets -configuration Release build -allowProvisioningUpdates'
 
         // Publish test restults.
         step([$class: 'JUnitResultArchiver', allowEmptyResults: true, testResults: 'build/reports/junit.xml'])

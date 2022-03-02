@@ -27,19 +27,15 @@ class codehistoryUITests: XCTestCase {
 
     func testGameStyleSwitch() {
         
-
-        let okayButton = app.buttons["Okay let's go!"]
-        let okayLabel = app.segmentedControls.buttons["Okay let's go!"]
-        
-        if okayButton.isSelected {
-            XCTAssertTrue(okayLabel.exists)
+        let app = XCUIApplication()
+        app.windows.children(matching: .other).element.children(matching: .other).element.tap()
+        app.buttons["Okay let's go!"].tap()
+        app.buttons["1998"].tap()
+        app.buttons["Next"].tap()
                 
-            okayButton.tap()
-            XCTAssertTrue(okayLabel.exists)
-        }
-
-                    
                 
+
+
     }
 
     func testLaunchPerformance() throws {
