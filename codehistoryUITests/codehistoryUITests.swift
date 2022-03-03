@@ -56,5 +56,7 @@ class codehistoryUITests: XCTestCase {
         let settingsApp = XCUIApplication(bundleIdentifier: "com.apple.Settings")
         settingsApp.launch()
         
+        print(settingsApp.debugDescription)
+        
     }
 }
