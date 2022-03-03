@@ -31,17 +31,13 @@ class codehistoryUITests: XCTestCase {
         app.windows.children(matching: .other).element.children(matching: .other).element.tap()
         app.buttons["Okay let's go!"].tap()
         
-        
-        app.buttons["1998"].tap()
-        app.buttons["Next"].tap()
+        // Check to see if a button exists
+        XCTAssert(app.buttons["1998"].exists, "1998 is not an option")
                 
-                
-
-
     }
 
     func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
+        if #available(macOS 12.3, iOS 15.0, tvOS 15.0, watchOS 8.0, *) {
             // This measures how long it takes to launch your application.
             measure(metrics: [XCTApplicationLaunchMetric()]) {
                 XCUIApplication().launch()
