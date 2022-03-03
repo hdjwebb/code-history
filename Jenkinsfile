@@ -24,7 +24,9 @@ node {
         // Publish test restults.
         step([$class: 'JUnitResultArchiver', allowEmptyResults: true, testResults: 'build/reports/junit.xml'])
     }
-
+    stage('Pipeline snippet generator') {
+        xcodeBuild appURL: '', assetPackManifestURL: '', buildDir: '', bundleID: '', bundleIDInfoPlistPath: '', cfBundleShortVersionStringValue: '', cfBundleVersionValue: '', cleanBeforeBuild: false, cleanResultBundlePath: false, configuration: 'Release', developmentTeamID: '', developmentTeamName: '', displayImageURL: '', fullSizeImageURL: '', ipaExportMethod: 'ad-hoc', ipaName: '', ipaOutputDirectory: '', keychainId: '', keychainPath: '', keychainPwd: <object of type hudson.util.Secret>, logfileOutputDirectory: '', provisioningProfiles: [[provisioningProfileAppId: '', provisioningProfileUUID: '']], resultBundlePath: '', sdk: '', signingMethod: 'readFromProject', symRoot: '', target: '', thinning: '', xcodeProjectFile: '', xcodeProjectPath: '', xcodeSchema: '', xcodeWorkspaceFile: '', xcodebuildArguments: ''
+    }
     // stage('Analytics') {
 
     //     parallel Coverage: {
