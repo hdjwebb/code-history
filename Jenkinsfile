@@ -29,7 +29,7 @@ node {
 
         parallel Coverage: {
             // Generate Code Coverage report
-            sh 'slather coverage --jenkins --html --scheme code history.xcodeproj/'
+            sh '/usr/local/lib/ruby/gems/3.1.0/gems/slather-2.7.2/bin/slather  coverage --jenkins --html --scheme code history.xcodeproj/'
 
             // Publish coverage results
             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'html', reportFiles: 'index.html', reportName: 'Coverage Report'])
