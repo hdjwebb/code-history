@@ -32,14 +32,47 @@ class codehistoryUITests: XCTestCase {
         app.buttons["Okay let's go!"].tap()
         
         // Check to see if a button exists
-        XCTAssert(app.buttons["1998"].exists, "1998 is not an option")
+//        XCTAssert(app.buttons["1998"].exists, "1998 is not an option")
+//        app.buttons["1998"].tap()
+//        app.buttons["Next"].tap()
+
 //        XCTAssert(app.buttons["Steve Jobs"].exists, "Steve Jobs is not an option")
 //        XCTAssert(app.buttons["Python"].exists, "Python is not an option")
 //        XCTAssert(app.buttons["Everest"].exists, "1998 is not an option")
 //        XCTAssert(app.buttons["Pepino"].exists, "Pepino is not an option")
 //        XCTAssert(app.buttons["5"].exists, "5 is not an option")
 //        XCTAssert(app.buttons["14"].exists, "5 is not an option")
-
+        for _ in 1...7 {
+            if app.buttons["1998"].exists {
+                app.buttons["1998"].tap()
+                app.buttons["Next"].tap()
+            }
+            if app.buttons["Simula"].exists {
+                app.buttons["Simula"].tap()
+                app.buttons["Next"].tap()
+            }
+            if app.buttons["Tim Berners-Lee"].exists {
+                app.buttons["Tim Berners-Lee"].tap()
+                app.buttons["Next"].tap()
+            }
+            if app.buttons["Everest"].exists {
+                app.buttons["Everest"].tap()
+                app.buttons["Next"].tap()
+            }
+            if app.buttons["Pepino"].exists {
+                app.buttons["Pepino"].tap()
+                app.buttons["Next"].tap()
+            }
+            if app.buttons["5"].exists {
+                app.buttons["5"].tap()
+                app.buttons["Next"].tap()
+                
+            }
+            if app.buttons["14"].exists {
+                app.buttons["14"].tap()
+                app.buttons["Next"].tap()
+            }
+        }
                 
     }
 
@@ -52,10 +85,4 @@ class codehistoryUITests: XCTestCase {
 //        }
 //    }
     
-    func openSettings() {
-        
-        let settings = XCUIApplication(bundleIdentifier: "com.apple.Settings")
-        settings.launch()
-        
-    }
 }
