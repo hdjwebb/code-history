@@ -43,12 +43,12 @@ class codehistoryUITests: XCTestCase {
                 
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 12.3, iOS 15.0, tvOS 15.0, watchOS 8.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
+//    func testLaunchPerformance() throws {
+//        if #available(macOS 12.3, iOS 15.0, tvOS 15.0, watchOS 8.0, *) {
+//            // This measures how long it takes to launch your application.
+//            measure(metrics: [XCTApplicationLaunchMetric()]) {
+//                XCUIApplication().launch()
+//            }
+//        }
+//    }
 }
