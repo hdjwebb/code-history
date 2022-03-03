@@ -22,7 +22,7 @@ node {
         sh 'xcodebuild -scheme "code history" -alltargets -configuration  Release build  -allowProvisioningUpdates'
 
         // Publish test restults.
-        step([$class: 'JUnitResultArchiver', allowEmptyResults: true, testResults: 'build/reports/junit.xml'])
+        // step([$class: 'JUnitResultArchiver', allowEmptyResults: true, testResults: 'build/reports/junit.xml'])
     }
 
     stage('Test') {
