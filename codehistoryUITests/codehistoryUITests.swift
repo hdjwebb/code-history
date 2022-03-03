@@ -39,8 +39,7 @@ class codehistoryUITests: XCTestCase {
         XCTAssert(app.buttons["Pepino"].exists, "Pepino is not an option")
         XCTAssert(app.buttons["5"].exists, "5 is not an option")
         XCTAssert(app.buttons["14"].exists, "5 is not an option")
-
-                
+        
     }
 
 //    func testLaunchPerformance() throws {
@@ -51,4 +50,11 @@ class codehistoryUITests: XCTestCase {
 //            }
 //        }
 //    }
+    
+    func openSettings() {
+        
+        let settingsApp = XCUIApplication(bundleIdentifier: "com.apple.Settings")
+        settingsApp.launch()
+        
+    }
 }
