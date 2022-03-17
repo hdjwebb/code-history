@@ -14,13 +14,14 @@ struct QuestionView: View {
     
     var body: some View {
         VStack {
+            Spacer()
             Text(question.questionText)
                 .font(.largeTitle)
                 .bold()
                 .multilineTextAlignment(.leading)
             Spacer()
             VStack {
-                ForEach(0..<question.possibleAnswers.count) { answerIndex in
+                ForEach(0..<question.possibleAnswers.count, id: \.self) { answerIndex in
                     Button(action: {
                         print("tapped on option with the text: \(question.possibleAnswers[answerIndex])")
                         viewModel.makeGuess(atIndex: answerIndex)

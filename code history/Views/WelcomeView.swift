@@ -18,6 +18,8 @@ struct WelcomeView: View {
                 GameColour.main.ignoresSafeArea()
                 VStack {
                     Spacer()
+                    //  Put and image of a shark here!
+                    
                     VStack(alignment: .leading, spacing: 0) {
                         Text("Select the correct answers to the following questions")
                             .font(.largeTitle)
@@ -36,6 +38,12 @@ struct WelcomeView: View {
                 .foregroundColor(.white)
             }
         }
+    }
+}
+
+struct WelcomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        WelcomeView()
     }
 }
 

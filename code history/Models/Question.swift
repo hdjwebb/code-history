@@ -12,62 +12,48 @@ struct Question: Hashable { // Add Hashable Conformance
     let possibleAnswers: [String]
     let correctAnswerIndex: Int
     
+    // Change the questions. Explain Arrays?
+    
     static var allQuestions = [
-        Question(questionText: "Who invented the \nWorld Wide Web?",
+        Question(questionText: "Question 1?",
                          possibleAnswers: [
-                            "Steve Jobs",
-                            "Linus Torvalds",
-                            "Bill Gates",
-                            "Tim Berners-Lee"
+                            "Answer 1",
+                            "Answer 2",
+                            "Answer 3",
+                            "Answer 4"
                          ],
                          correctAnswerIndex: 3),
-        Question(questionText: "What was the first object oriented programming \nlanguage?",
+        Question(questionText: "Question 2?",
                          possibleAnswers: [
-                            "Simula",
-                            "Python",
-                            "Swift",
-                            "C"
+                            "Answer 1",
+                            "Answer 2",
+                            "Answer 3",
+                            "Answer 4"
                          ],
                          correctAnswerIndex: 0),
-        Question(questionText: "What is the tallest mountain on Earth?",
+        Question(questionText: "Question 3?",
                          possibleAnswers: [
-                            "Ben Nevis",
-                            "Mont Blanc",
-                            "Everest",
-                            "Mauna Kea"
+                            "Answer 1",
+                            "Answer 2",
+                            "Answer 3",
+                            "Answer 4"
                          ],
                          correctAnswerIndex: 2),
-        Question(questionText: "Which year did the \niMac get released?",
+        Question(questionText: "Question 3?",
                          possibleAnswers: [
-                            "1997",
-                            "1998",
-                            "1999",
-                            "2000"
+                            "Answer 1",
+                            "Answer 2",
+                            "Answer 3",
+                            "Answer 4"
                          ],
                          correctAnswerIndex: 1),
-        Question(questionText: "How many circles are in the Olympic rings?",
+        Question(questionText: "Question 4?",
                          possibleAnswers: [
-                            "3",
-                            "5",
-                            "7",
-                            "4"
+                            "Answer 1",
+                            "Answer 2",
+                            "Answer 3",
+                            "Answer 4"
                          ],
-                         correctAnswerIndex: 1),
-        Question(questionText: "What is cucumber in Spanish?",
-                         possibleAnswers: [
-                            "Cerco",
-                            "Piponmio",
-                            "Losaugo",
-                            "Pepino"
-                         ],
-                         correctAnswerIndex: 3),
-        Question(questionText: "What is (4 + 5) / 3 * 5 - 1 ?",
-                         possibleAnswers: [
-                            "14",
-                            "0.4",
-                            "12",
-                            "0.6428571429"
-                         ],
-                         correctAnswerIndex: 0)
+                         correctAnswerIndex: 1)
     ]
 }

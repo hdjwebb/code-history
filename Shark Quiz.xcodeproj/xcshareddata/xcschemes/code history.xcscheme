@@ -17,7 +17,7 @@
                BlueprintIdentifier = "BA7C5D9127A48BD400BE2B9F"
                BuildableName = "code history.app"
                BlueprintName = "code history"
-               ReferencedContainer = "container:code history.xcodeproj">
+               ReferencedContainer = "container:Shark Quiz.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "BAFA4D4227BE8FA40038BB91"
                BuildableName = "codehistoryUITests.xctest"
                BlueprintName = "codehistoryUITests"
-               ReferencedContainer = "container:code history.xcodeproj">
+               ReferencedContainer = "container:Shark Quiz.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,7 +57,7 @@
             BlueprintIdentifier = "BA7C5D9127A48BD400BE2B9F"
             BuildableName = "code history.app"
             BlueprintName = "code history"
-            ReferencedContainer = "container:code history.xcodeproj">
+            ReferencedContainer = "container:Shark Quiz.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -74,7 +74,7 @@
             BlueprintIdentifier = "BA7C5D9127A48BD400BE2B9F"
             BuildableName = "code history.app"
             BlueprintName = "code history"
-            ReferencedContainer = "container:code history.xcodeproj">
+            ReferencedContainer = "container:Shark Quiz.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
