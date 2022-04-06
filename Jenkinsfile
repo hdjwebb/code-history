@@ -26,7 +26,7 @@ node {
     }
 
     stage('Test') {
-        sh 'xcrun xcodebuild -scheme "code history"    test -destination "platform=iOS Simulator,name=iPhone 12,OS=15.2"'
+        sh 'xcrun xcodebuild -scheme "code history"    test -destination "platform=iOS,id=00008020-00116C3026E9002E"'
     }
 
     // stage ('Notify') {
