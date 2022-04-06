@@ -26,7 +26,7 @@ node {
     }
 
     stage('Test') {
-        sh 'xcrun xcodebuild -scheme "code history"    test -destination "platform=iOS,id=00008020-00116C3026E9002E"'
+        sh 'xcrun xcodebuild -scheme "code history"    test -destination "platform=iOS,id=00008101-001129EC3C00011E"'
     }
 
     // stage ('Notify') {
