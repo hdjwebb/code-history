@@ -7,7 +7,9 @@ node {
         // echo "PATH is: $PATH"
 
         // CLI DeviceCompute
-        sh 'devicecompute | session create --ios --setup  --build-train Sydney'
+        sh 'devicecompute'
+        
+        'session create --ios --setup  --build-train Sydney'
 
     }
 
