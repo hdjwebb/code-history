@@ -7,11 +7,8 @@ node {
         // echo "PATH is: $PATH"
 
         // CLI DeviceCompute
-        sh 'devicecompute session create --ios --setup  --build-train Sydney'
-        echo "Finished building Sydney!"
-        sh 'devicecompute session exec nvram boot-args="serial=3 debug=0x14e amfi_unrestrict_task_for_pid=1 amfi_allow_any_signature=1 cs_enforcement_disable=1 amfi_get_out_of_my_way=1 camSuspend=0 agm-genuine=1 usb_standard_mode_timeout=0" '
-        sh 'devicecompute session exec snapshottool golive 2'
-        sh 'devicecompute session reboot'
+        sh 'devicecompute session create --ios --setup'
+        echo "Finished!"
     }
 
 
