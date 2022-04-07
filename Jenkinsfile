@@ -3,7 +3,7 @@
 node {
     stage('DeviceCompute') {
         // CLI DeviceCompute
-        sh 'echo $PATH'
+        'echo $PATH'
         // sh 'devicecompute'
         // sh 'session create --ios --setup  --build-train Sydney'
 
