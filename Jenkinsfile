@@ -1,6 +1,6 @@
 #!groovy
 
-pipeline {
+node {
 
     environment {
         PATH = "/opt/brew/bin/:${env.PATH}"
