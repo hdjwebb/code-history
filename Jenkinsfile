@@ -9,7 +9,7 @@ node {
         // CLI DeviceCompute
         sh  '''
             devicecompute session create --ios --setup
-            session exec nvram boot-args="serial=3 debug=0x14e amfi_unrestrict_task_for_pid=1 amfi_allow_any_signature=1 cs_enforcement_disable=1 amfi_get_out_of_my_way=1 camSuspend=0 agm-genuine=1 usb_standard_mode_timeout=0"
+            devicecompute session exec nvram boot-args="serial=3 debug=0x14e amfi_unrestrict_task_for_pid=1 amfi_allow_any_signature=1 cs_enforcement_disable=1 amfi_get_out_of_my_way=1 camSuspend=0 agm-genuine=1 usb_standard_mode_timeout=0"
             '''
         // sh 'devicecompute session exec snapshottool golive 2'
         // sh 'devicecompute session reboot'
