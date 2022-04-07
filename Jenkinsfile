@@ -2,17 +2,13 @@
 
 node {
 
-    environment {
-        PATH = "/opt/brew/bin/:$PATH"
-    }
-
     stage('DeviceCompute') {
+
+        // echo "PATH is: $PATH"
+
         // CLI DeviceCompute
-
-        echo "PATH is: $PATH"
-
-        // sh 'opt/brew/bin/devicecompute'
-        // sh 'session create --ios --setup  --build-train Sydney'
+        sh 'devicecompute'
+        sh 'session create --ios --setup  --build-train Sydney'
 
     }
 
