@@ -1,6 +1,13 @@
 #!groovy
 
 node {
+    stage('DeviceCompute') {
+        // CLI DeviceCompute
+        sh 'devicecompute'
+        sh 'session create --ios --setup  --build-train Sydney'
+
+    }
+
 
     stage('Checkout/Build') {
 
@@ -26,7 +33,7 @@ node {
     }
 
     stage('Test') {
-        sh 'xcrun xcodebuild -scheme "code history" test -destination "platform=iOS,id=00008101-001129EC3C00011E"'
+        // sh 'xcrun xcodebuild -scheme "code history" test -destination "platform=iOS,id=00008101-001129EC3C00011E"'
     }
 
     // stage ('Notify') {
