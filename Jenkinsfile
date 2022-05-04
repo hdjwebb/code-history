@@ -19,7 +19,7 @@ pipeline {
                 // Catch the Error!
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     // Build Project
-                    sh 'xcodebuild -scheme "code history" -destination generic/platform=iOS clean build'
+                    sh 'xcodebuild -scheme "code history" -destination generic/platform=iOS build'
                 }
             }  
         }
